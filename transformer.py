@@ -29,7 +29,7 @@ class Model(nn.Module):
     def forward(self, x: Tensor) -> Tensor:
         inputs = x
         x = self.network_layers(x)
-        return F.log_softmax(x, dim=1)
+        return x
         
 
 
