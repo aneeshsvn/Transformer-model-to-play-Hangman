@@ -45,7 +45,7 @@ Log softmax is applied to the logits as KL divergence loss is used.
 
 This file handles data preparation for training:
 
-Tokenize Function: Converts words (including the hidden letters represented by #) into sequences of numerical indices for the model.
+Tokenize Function: Converts words (including the hidden letters represented by #) into sequences of numerical indices for the model. Also adds tokens representing the start and the end of the sequence. 
 
 WordDataset Class:
 Loads words from a text file.
