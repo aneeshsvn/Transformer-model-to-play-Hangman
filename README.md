@@ -1,6 +1,6 @@
 # Transformer based model to play the Hangman game.
 
-This document details the machine learning model I developed to play Hangman. My model leverages a Transformer based architecture to predict missing letters in masked words at each step of the hangman game. Transformers are known for its effectiveness in handling sequential data, making them particularly suitable for this task.
+This document details the machine learning model I developed to play Hangman. My model leverages a Transformer based architecture to predict missing letters in masked words at each step of the hangman game. Transformers are known for its effectiveness in handling sequential data, making them particularly suitable for this task. My model has a winning rate of 65%.
 
 ## 1. Overall Strategy
 
