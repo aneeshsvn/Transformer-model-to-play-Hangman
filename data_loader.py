@@ -5,14 +5,14 @@ import numpy as np
 import random
 
 def tokenize(word: str , max_len: int) -> Tensor:
-    assert len(word) <= max_len, f"word length [{len(word)}] is greater than max_len [{max_len}]"
+    assert len(word) <= (max_len - 2), f"word length [{len(word)}] is greater than max_len [{max_len-2}]"
     ltr2idx = {ltr: idx+1 for idx, ltr in enumerate('#abcdefghijklmnopqrstuvwxyz')}
-    tokenized_word = [ltr2idx[ltr] for ltr in word]+ [0]*(max_len - len(word))
-    return tokenized_word 
+    tokenized_word = [28] + [ltr2idx[ltr] for ltr in word] + [29] + [0]*(max_len - 2 - len(word))
+    return tokenized_word
 
 class WordDataset(Dataset):
     def __init__(self, word_file, max_len, device):
-        words = [word for word in open(word_file).read().split('\n') if len(word) <= max_len and len(list(set(word)))>1]
+        words = [word for word in open(word_file).read().split('\n') if len(word) <= (max_len - 2) and len(list(set(word)))>1]
         selected_indices = np.random.choice(np.arange(len(words)), len(words), replace=False)
         self.words = [words[i] for i in selected_indices]
         self.max_len = max_len
