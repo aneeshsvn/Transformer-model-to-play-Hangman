@@ -1,6 +1,6 @@
 # Transformer based model to play the Hangman game.
 
-This document details the machine learning model I developed to play Hangman. My model leverages a Transformer based architecture to predict missing letters in masked words at each step of the hangman game. Transformers are known for its effectiveness in handling sequential data, making them particularly suitable for this task. My model has a winning rate of 65%.
+This document details the machine learning model I developed to play Hangman. My model leverages a Transformer based architecture to predict missing letters in masked words at each step of the hangman game. Transformers are known for its effectiveness in handling sequential data, making them particularly suitable for this task. My model has a winning rate of 68%.
 
 ## 1. Overall Strategy
 
@@ -56,4 +56,4 @@ Generates labels representing the probability distribution of letters for masked
 
 ## Training
 
-In the train.ipynb jupyter notebook, I trained the model with a learning rate of 0.001 for 500 epochs using Adam optimizer. I used KL divergence loss as the loss function as I am trying to match the predicted distribution to the label distribution. The loss decreases from ~2 at epoch 0 to around ~1.23 at epoch 500. Since I trained the model only for words with 20 or fewer characters, when the input word is longer than 20 characters, I either choose the first or the last 20 characters to be the input word for the model. My model results in ~65% accuracy. This can possibly be improved further by fine tuning the model hyper-parameters such as the embedding dimension, number of heads and number of encoder layers etc.
+In the train.ipynb jupyter notebook, I trained the model with a learning rate of 0.001 for 500 epochs using Adam optimizer. I used KL divergence loss as the loss function as I am trying to match the predicted distribution to the label distribution. The loss decreases from ~2 at epoch 0 to around ~1.23 at epoch 500. Since I trained the model only for words with 20 or fewer characters, when the input word is longer than 20 characters, I either choose the first or the last 20 characters to be the input word for the model. My model results in ~68% accuracy. This can possibly be improved further by fine tuning the model hyper-parameters such as the embedding dimension, number of heads and number of encoder layers etc.
